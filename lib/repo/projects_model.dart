@@ -138,4 +138,54 @@ List<ProjectsModel> myProjects = [
         "Software Engineer specializing in wearable tech and data visualization.",
     projectID: 4,
   ),
+  ProjectsModel(
+    projectName: "Fitness Tracker",
+    projectCategory: "Wearable Application",
+    company: "HealthTech",
+    duration: "5 months",
+    titleImage: "assets/images/fitness_tracker.png",
+    projectDescription:
+        "A wearable app that tracks fitness activities, provides workout plans, and monitors progress.",
+    companyLink: "https://www.healthtech.com",
+    appStoreLink: "https://apps.apple.com/app/id1122334455",
+    playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.healthtech.fitnesstracker",
+    tools: ["Flutter", "Dart", "GPS"],
+    medias: [
+      ProjectMediaModel(
+          asset: "assets/media/fitness_tracker_home.png",
+          description: "Main Dashboard"),
+      ProjectMediaModel(
+          asset: "assets/media/fitness_tracker_stats.png",
+          description: "Activity Statistics"),
+    ],
+    roleDescription:
+        "Software Engineer specializing in wearable tech and data visualization.",
+    projectID: 5,
+  ),
+  ProjectsModel(
+    projectName: "Fitness Tracker",
+    projectCategory: "Wearable Application",
+    company: "HealthTech",
+    duration: "5 months",
+    titleImage: "assets/images/fitness_tracker.png",
+    projectDescription:
+        "A wearable app that tracks fitness activities, provides workout plans, and monitors progress.",
+    companyLink: "https://www.healthtech.com",
+    appStoreLink: "https://apps.apple.com/app/id1122334455",
+    playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.healthtech.fitnesstracker",
+    tools: ["Flutter", "Dart", "GPS"],
+    medias: [
+      ProjectMediaModel(
+          asset: "assets/media/fitness_tracker_home.png",
+          description: "Main Dashboard"),
+      ProjectMediaModel(
+          asset: "assets/media/fitness_tracker_stats.png",
+          description: "Activity Statistics"),
+    ],
+    roleDescription:
+        "Software Engineer specializing in wearable tech and data visualization.",
+    projectID: 6,
+  ),
 ];
