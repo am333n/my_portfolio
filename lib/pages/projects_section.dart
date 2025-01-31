@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/constants/app_colors.dart';
 import 'package:my_portfolio/core/app_card.dart';
 import 'package:my_portfolio/core/common_widget.dart';
+import 'package:my_portfolio/core/image_displayer.dart';
 import 'package:my_portfolio/core/screen_size_widget.dart';
 import 'package:my_portfolio/repo/profile_details_model.dart';
 import 'package:my_portfolio/repo/projects_model.dart';
+import 'package:my_portfolio/service/launcher.dart';
 import 'package:my_portfolio/service/responsiveness.dart';
 import 'package:my_portfolio/styles/txt.dart';
 import 'package:my_portfolio/widgets/spacers.dart';
 
 class ProjectsSection extends StatelessWidget {
-  const ProjectsSection({super.key});
-
+  ProjectsSection({super.key});
+  final ScrollController _controller = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.purple.withOpacity(0.2),
       child: ScreenSizeWidget(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,40 +25,94 @@ class ProjectsSection extends StatelessWidget {
           children: [
             CommonWidget.dualToneTitle(context, title: 'recent Projects'),
             const VerticalSpacing(30),
-            SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.6,
-                child: _buildProjectList())
+            SizedBox(height: null, child: _buildProjectList(_controller))
           ],
         ),
       ),
     );
   }
 
-  Scrollbar _buildProjectList() {
+  Scrollbar _buildProjectList(ScrollController scrollController) {
     return Scrollbar(
+      controller: scrollController,
       child: ListView.separated(
           itemCount: myProjects.length,
+          controller: scrollController,
           shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
           separatorBuilder: (context, index) => HorizontalSpacing(20),
           itemBuilder: (context, index) {
             final project = myProjects[index];
             return AppCard(
                 child: SizedBox(
-              width: Responsiveness.isTabletOrWeb(context)
-                  ? MediaQuery.sizeOf(context).width * 0.2
-                  : MediaQuery.sizeOf(context).width * 0.3,
-              child: Column(
+              child: Row(
                 children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.amber,
+                  // ImageDisplayer(imageURL: myProfileDetails.image),
+                  // HorizontalSpacing(15),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Txt(
+                              project.projectName,
+                              style: TxtStyle.headerXSSemiBold,
+                            ),
+                            Row(
+                              children: [
+                                if (project.appStoreLink != null)
+                                  IconButton(
+                                      highlightColor:
+                                          Responsiveness.isMobile(context)
+                                              ? AppColors.primary
+                                              : AppColors.grey,
+                                      hoverColor: AppColors.primary,
+                                      onPressed: () {
+                                        Launcher.openNewTab(
+                                            project.appStoreLink!);
+                                      },
+                                      icon: FaIcon(FontAwesomeIcons.appStore)),
+                                HorizontalSpacing(10),
+                                if (project.playStoreLink != null)
+                                  IconButton(
+                                      highlightColor:
+                                          Responsiveness.isMobile(context)
+                                              ? AppColors.primary
+                                              : AppColors.grey,
+                                      hoverColor: AppColors.primary,
+                                      onPressed: () {
+                                        Launcher.openNewTab(
+                                            project.playStoreLink!);
+                                      },
+                                      icon: FaIcon(FontAwesomeIcons.googlePlay))
+                              ],
+                            )
+                          ],
+                        ),
+                        VerticalScreenSpacing(0.01),
+                        Txt(
+                          "Role: ${project.roleDescription ?? ''}",
+                          color: AppColors.fontSecondary,
+                        ),
+                        VerticalScreenSpacing(0.01),
+                        Txt(
+                          "Organization: ${project.oraganisation ?? ''}",
+                          color: AppColors.fontSecondary,
+                        ),
+                        VerticalScreenSpacing(0.01),
+                        Txt(
+                          project.projectDescription ?? '',
+                          color: AppColors.fontSecondary,
+                        ),
+                        VerticalScreenSpacing(0.01),
+                        Txt(
+                          "${project.tools ?? ''}",
+                          color: AppColors.fontSecondary,
+                        ),
+                      ],
+                    ),
                   ),
-                  HorizontalSpacing(10),
-                  Txt(project.projectName),
-                  HorizontalSpacing(10),
-                  Txt(project.roleDescription ?? ''),
                 ],
               ),
             ));

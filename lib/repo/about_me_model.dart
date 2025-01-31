@@ -18,4 +18,4 @@ final AboutMe myAboutMe = AboutMe(
     description:
         'Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.',
     yearsOfExperience: '02',
-    projectsCompleted: '10');
+    projectsCompleted: '07');

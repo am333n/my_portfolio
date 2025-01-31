@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/constants/app_colors.dart';
 import 'package:my_portfolio/repo/profile_details_model.dart';
+import 'package:my_portfolio/service/js_delivery.dart';
 import 'package:my_portfolio/service/launcher.dart';
 import 'package:my_portfolio/styles/txt.dart';
 import 'package:my_portfolio/widgets/spacers.dart';
@@ -69,7 +70,7 @@ class ProfileDetails extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset(
+              child: Image.network(
                 myProfileDetails.image,
                 fit: BoxFit.cover, // Ensures the image fills the container
               ),
@@ -86,12 +87,12 @@ class ProfileDetails extends StatelessWidget {
       runSpacing: 10, // Space between wrapped rows
       alignment: WrapAlignment.center,
       children: [
-        _iconButton(
-          icon: FontAwesomeIcons.envelope,
-          onPressed: () {
-            Launcher.openMail(myProfileDetails.email);
-          },
-        ),
+        // _iconButton(
+        //   icon: FontAwesomeIcons.envelope,
+        //   onPressed: () {
+        //     Launcher.openMail(myProfileDetails.email);
+        //   },
+        // ),
         _iconButton(
           icon: FontAwesomeIcons.github,
           onPressed: () {

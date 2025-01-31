@@ -1,3 +1,5 @@
+import 'package:my_portfolio/service/js_delivery.dart';
+
 class ProfileDetailsModel {
   final String fullName;
   final String description;
@@ -21,11 +23,13 @@ class ProfileDetailsModel {
 
 final ProfileDetailsModel myProfileDetails = ProfileDetailsModel(
   fullName: 'Muhammad Ameen',
-  image: 'assets/images/my_photo.png',
+  image: JsDeliver.convertToJsDeliver(
+      'https://github.com/am333n/portfolio_cdn/blob/main/images/my_photo.png'),
   description:
-      'A passionate software developer with expertise in mobile and web development.',
-  linkedinUrl: 'https://www.linkedin.com/in/johndoe',
+      'A passionate software developer with expertise in mobile and cross platform application development',
+  linkedinUrl: 'https://www.linkedin.com/in/muhammad-ameen-b05a76258',
   githubUrl: 'https://github.com/am333n',
   email: 'muhammedameen752@gmail.com',
-  cvUrl: 'https://www.example.com/johndoe_cv.pdf',
+  cvUrl:
+      'https://drive.google.com/file/d/1Cjht6dGAIkNLwZc0w2Xfve_tz5Hz1qw9/view',
 );
