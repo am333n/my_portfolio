@@ -30,6 +30,6 @@ final ProfileDetailsModel myProfileDetails = ProfileDetailsModel(
   linkedinUrl: 'https://www.linkedin.com/in/muhammad-ameen-b05a76258',
   githubUrl: 'https://github.com/am333n',
   email: 'muhammedameen752@gmail.com',
-  cvUrl:
-      'https://drive.google.com/file/d/1Cjht6dGAIkNLwZc0w2Xfve_tz5Hz1qw9/view',
+  cvUrl: JsDeliver.convertToJsDeliver(
+      'https://github.com/am333n/portfolio_cdn/blob/main/docs/my_cv.pdf'),
 );

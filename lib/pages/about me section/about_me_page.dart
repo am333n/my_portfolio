@@ -22,14 +22,15 @@ class AboutMePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CommonWidget.dualToneTitle(context,
-              title: myAboutMe.title, fontSize: 60),
-          VerticalSpacing(20),
+              title: myAboutMe.title, fontSize: 55),
+          const VerticalSpacing(20),
           Txt(
             myAboutMe.description,
             color: AppColors.fontSecondary,
           ),
-          VerticalSpacing(20),
-          FractionallySizedBox(widthFactor: 1, child: ExperienceNumberRow())
+          const VerticalSpacing(20),
+          const FractionallySizedBox(
+              widthFactor: 1, child: ExperienceNumberRow())
         ],
       ),
     );

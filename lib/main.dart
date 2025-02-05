@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Ameen Portfolio',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: AppColors.backgroundPrimary),
         useMaterial3: true,
       ),
       home: const HomePage(),

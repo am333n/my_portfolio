@@ -51,7 +51,16 @@ class ProfileDetails extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         double maxWidth = constraints.maxWidth; // Get the max available width
-        double imageHeight = maxWidth * (5 / 4); // Maintain 4:5 aspect ratio
+        double maxHeight =
+            constraints.maxHeight; // Get the max available height
+
+        // Calculate the image height to maintain the 4:5 aspect ratio based on the width
+        double imageHeight = maxWidth * (5 / 4);
+
+        // If the available height is smaller, reduce the image height to maintain a reasonable size
+        if (imageHeight > maxHeight) {
+          imageHeight = maxHeight;
+        }
 
         return Center(
           child: ClipRRect(
