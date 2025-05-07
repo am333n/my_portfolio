@@ -17,16 +17,17 @@ class MobileLayout extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            VerticalScreenSpacing(0.05),
-            FractionallySizedBox(widthFactor: 0.9, child: ProfileDetails()),
-            VerticalScreenSpacing(0.1),
+            const VerticalScreenSpacing(0.05),
+            const FractionallySizedBox(
+                widthFactor: 0.9, child: ProfileDetails()),
+            const VerticalScreenSpacing(0.1),
             AboutMePage(scrollController: scrollController),
-            VerticalScreenSpacing(0.1),
-            ExpereienceSection(),
-            VerticalScreenSpacing(0.1),
+            const VerticalScreenSpacing(0.1),
+            const ExpereienceSection(),
+            const VerticalScreenSpacing(0.1),
             ProjectsSection(),
-            VerticalScreenSpacing(0.1),
-            SkillsSection()
+            const VerticalScreenSpacing(0.1),
+            const SkillsSection()
           ],
         ),
       ),
