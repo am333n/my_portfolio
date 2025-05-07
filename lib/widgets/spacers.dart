@@ -27,3 +27,27 @@ class VerticalSpacing extends StatelessWidget {
     );
   }
 }
+
+class VerticalScreenSpacing extends StatelessWidget {
+  const VerticalScreenSpacing(
+    this.value, {
+    super.key,
+  });
+  final double? value;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(height: MediaQuery.sizeOf(context).height * (value ?? 0.1));
+  }
+}
+
+class HorizontalScreenSpacing extends StatelessWidget {
+  const HorizontalScreenSpacing(
+    this.value, {
+    super.key,
+  });
+  final double? value;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(width: MediaQuery.sizeOf(context).width * (value ?? 0.1));
+  }
+}

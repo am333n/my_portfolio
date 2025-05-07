@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/styles/text_styles.dart';
+import 'package:my_portfolio/styles/txt.dart';
 
 class AnimatedHello extends StatefulWidget {
   const AnimatedHello({super.key});
@@ -55,8 +55,8 @@ class _AnimatedHelloState extends State<AnimatedHello> {
         child: Txt(
           _currentGreeting,
           key: ValueKey<String>(_currentGreeting),
-          textStyle: TextStyles.headingLBold,
-          fontColor: Colors.white,
+          style: TxtStyle.headerLBold,
+          color: Colors.white,
           fontSize: 48,
         ));
   }
