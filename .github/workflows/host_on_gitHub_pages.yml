@@ -34,10 +34,10 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
-        path: ~/.pub-cache
-        key: ${{ runner.os }}-pub-cache-${{ hashFiles('**/pubspec.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-pub-cache-
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-pub-cache-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-cache-
 
       - name: Download pub dependencies
         run: flutter pub get
