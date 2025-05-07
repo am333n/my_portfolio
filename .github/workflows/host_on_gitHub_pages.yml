@@ -56,4 +56,8 @@ jobs:
           folder: build/web
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Purge JSDelivr Cache for my_cv.pdf
+        run: |
+          curl -X GET "https://purge.jsdelivr.net/gh/am333n/portfolio_cdn/docs/my_cv.pdf"
+
 
