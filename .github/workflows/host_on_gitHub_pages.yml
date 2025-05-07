@@ -31,12 +31,13 @@ jobs:
           channel: 'stable'
       - run: flutter --version
 
-      - name: Cache pub dependencies
+      - name: Cache dependencies
         uses: actions/cache@v2
         with:
-          path: ${{ env.FLUTTER_HOME }}/.pub-cache
-          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: ${{ runner.os }}-pub-
+        path: ~/.pub-cache
+        key: ${{ runner.os }}-pub-cache-${{ hashFiles('**/pubspec.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pub-cache-
 
       - name: Download pub dependencies
         run: flutter pub get
