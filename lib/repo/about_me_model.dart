@@ -14,7 +14,7 @@ class AboutMe {
 }
 
 final AboutMe myAboutMe = AboutMe(
-    title: 'Software Developer',
+    title: 'Software Developer ++',
     description:
         'Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.',
     yearsOfExperience: '02',
