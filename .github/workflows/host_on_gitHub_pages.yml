@@ -2,6 +2,10 @@
 name: Host on GitHub Pages
 
 # Controls when the workflow will run
+
+permissions:
+  contents: write
+  
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
@@ -48,5 +52,8 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          branch: gh-pages
           folder: build/web
+          token: ${{ secrets.GITHUB_TOKEN }}
+
 
