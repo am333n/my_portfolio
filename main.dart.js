@@ -68464,7 +68464,7 @@ c=j[1]
 i=j[2]
 h=[400*d/(d+27.13),400*c/(c+27.13),400*i/(i+27.13)]
 return new A.a2a(l,(40*h[0]+20*h[1]+h[2])/20*k,k,k,a1,1,q,m,A.zp(m,0.25),1.48+e)})
-s($,"aAE","ad0",()=>new A.NB("Software Developer","Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.","02","07"))
+s($,"aAE","ad0",()=>new A.NB("Software Developer ++","Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.","02","07"))
 r($,"aAF","ad1",()=>A.c([new A.Cj("Ceroen Software Solutions","May 2023","Present","https://ceroen.com/","Rebuilt apps to be faster, more efficient, and visually appealing. Led the mobile department single-handedly, launching three apps on the Play Store and App Store. Improved performance by 25%, worked with teams to design new features, and collaborated with beta testers to fine-tune the user experience. Ensured smooth updates and maintained high code quality.","Flutter Developer")],A.a6("y<Cj>")))
 s($,"aAG","zJ",()=>new A.Yh("Muhammad Ameen","A passionate software developer with expertise in mobile and cross platform application development","https://www.linkedin.com/in/muhammad-ameen-b05a76258","https://github.com/am333n",A.id("https://github.com/am333n/portfolio_cdn/blob/main/images/my_photo.png"),A.id("https://github.com/am333n/portfolio_cdn/blob/main/docs/my_cv.pdf")))
 r($,"aAH","ad2",()=>{var q="Mobile Application",p="Ceroen Software Solutions",o="Solo Developer",n=null,m=t.s
